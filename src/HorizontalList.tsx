@@ -1,10 +1,10 @@
 import React from 'react';
 import {
   FlatList,
-  StyleProp,
+  type StyleProp,
   StyleSheet,
   Text,
-  TextStyle,
+  type TextStyle,
   View,
 } from 'react-native';
 

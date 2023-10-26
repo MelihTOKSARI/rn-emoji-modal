@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const charFromUtf16 = (utf16) =>
-  String.fromCodePoint(...utf16.split('-').map((u) => '0x' + u));
-export const charFromEmojiObject = (obj) => charFromUtf16(obj.unified);
+const charFromUtf16 = (utf16: any) =>
+  String.fromCodePoint(...utf16.split('-').map((u: any) => '0x' + u));
+export const charFromEmojiObject = (obj: any) => charFromUtf16(obj.unified);
 
 interface EmojiCellProps {
   emojiItem: any;

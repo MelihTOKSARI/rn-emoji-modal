@@ -1,5 +1,5 @@
-import React, { FC, ReactNode } from 'react';
-import { ColorValue } from 'react-native';
+import React, { type FC, type ReactNode } from 'react';
+import { type ColorValue } from 'react-native';
 
 import { Svg } from 'react-native-svg';
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  GestureResponderEvent,
-  StyleProp,
+  type GestureResponderEvent,
+  type StyleProp,
   StyleSheet,
   Text,
-  TextStyle,
+  type TextStyle,
   TouchableOpacity,
   View,
-  ViewStyle,
+  type ViewStyle,
 } from 'react-native';
 
 import CloseSVG from './Close';

@@ -1,6 +1,12 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { StyleProp, TextInput, TextStyle, View, ViewStyle } from 'react-native';
+import {
+  type StyleProp,
+  StyleSheet,
+  TextInput,
+  type TextStyle,
+  View,
+  type ViewStyle,
+} from 'react-native';
 
 import SearchSVG from './UI/Search';
 

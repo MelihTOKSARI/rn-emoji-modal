@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
-import { Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 import { Categories } from './constants/Categories';
-import { Category } from './model/Category';
+import { type Category } from './model/Category';
 
 const categoryKeys = Object.keys(Categories);
 
@@ -23,36 +22,42 @@ const CategoryBar = ({
   primaryColor,
   showAll,
   showHistory,
-}: CategoryProps) => {
+}: CategoryProps): JSX.Element => {
   const tabSize = width / categoryKeys.length;
-  return categoryKeys.map((c: string) => {
-    const category = Categories[c];
-    if (!showAll && category!.name === 'All') {
-      return undefined;
-    }
+  return (
+    <>
+      {categoryKeys.map((c: string) => {
+        const category = Categories[c];
+        if (!showAll && category!.name === 'All') {
+          return undefined;
+        }
 
-    if (!showHistory && category!.name === 'Recently used') {
-      return undefined;
-    }
+        if (!showHistory && category!.name === 'Recently used') {
+          return undefined;
+        }
 
-    return (
-      <TouchableOpacity
-        key={category!.name}
-        onPress={() => onPress(category!)}
-        style={[
-          styles.categoryContainer,
-          {
-            height: tabSize,
-            borderColor: category === activeCategory ? primaryColor : '#EEEEEE',
-          },
-        ]}
-      >
-        <Text style={[styles.category, { fontSize: tabSize - 24 }]}>
-          {category!.symbol || category!.name}
-        </Text>
-      </TouchableOpacity>
-    );
-  });
+        return (
+          <TouchableOpacity
+            key={category!.name}
+            onPress={() => onPress(category!)}
+            style={[
+              styles.categoryContainer,
+              // eslint-disable-next-line react-native/no-inline-styles
+              {
+                height: tabSize,
+                borderColor:
+                  category === activeCategory ? primaryColor : '#EEEEEE',
+              },
+            ]}
+          >
+            <Text style={[styles.category, { fontSize: tabSize - 24 }]}>
+              {category!.symbol || category!.name}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </>
+  );
 };
 
 const styles = StyleSheet.create({

@@ -2,19 +2,19 @@ import React, { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Platform,
-  StyleProp,
+  type StyleProp,
   StyleSheet,
   Text,
-  TextStyle,
+  type TextStyle,
   View,
-  ViewStyle,
+  type ViewStyle,
 } from 'react-native';
 import emoji from 'emoji-datasource';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Header from './UI/Header';
 import Searchbar from './SearchBar';
-import { Category } from './model/Category';
+import { type Category } from './model/Category';
 import { Categories } from './constants/Categories';
 import CategoryBar from './CategoryBar';
 import HorizontalEmojiList from './HorizontalList';
@@ -25,8 +25,8 @@ const storage_key = '@rn-emoji-modal:HISTORY';
 const filteredEmojis = emoji.filter((e) => !e.obsoleted_by);
 const emojiByCategory = (category: string) =>
   filteredEmojis.filter((e) => e.category === category);
-const sortEmoji = (list) =>
-  list.sort((a, b) => a.emoji.sort_order - b.emoji.sort_order);
+const sortEmoji = (list: any) =>
+  list.sort((a: any, b: any) => a.emoji.sort_order - b.emoji.sort_order);
 const categoryKeys = Object.keys(Categories);
 
 interface Props {
@@ -91,8 +91,6 @@ const EmojiModal = ({
   showTabs = true,
   onSelected,
 }: Props) => {
-  // TODO Use useReducer for state management
-  // TODO Provide some theme options like background, selected, preview, etc.
   const [isReady, setIsReady] = useState(false);
   const [history, setHistory] = useState([]);
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -104,10 +102,11 @@ const EmojiModal = ({
     Categories.emotion as Category
   );
   const [emojiListEmpty, setEmojiListEmpty] = useState(false);
-  const [categoryEmojis, setCategoryEmojis] = useState();
+  const [categoryEmojis, setCategoryEmojis] = useState({});
 
   useEffect(() => {
     prerenderCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -116,7 +115,9 @@ const EmojiModal = ({
     }
 
     if (horizontal) {
-      setColLength(Math.ceil(categoryEmojis[category.name].length / rows));
+      setColLength(
+        Math.ceil((categoryEmojis[category.name] as Array<any>).length / rows)
+      );
     } else {
       setColSize(
         Math.floor((width - containerPaddingHorizontal * 2) / numColumns)

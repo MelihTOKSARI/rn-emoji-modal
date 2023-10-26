@@ -1,4 +1,4 @@
-import { Category } from '../model/Category';
+import { type Category } from '../model/Category';
 
 interface IDictionary<TValue> {
   [id: string]: TValue;
