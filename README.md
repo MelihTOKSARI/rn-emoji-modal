@@ -8,6 +8,13 @@ Library to use emoji modal
 npm install rn-emoji-modal
 ```
 
+You should also install below packages to run smoothly.
+
+```sh
+npm i @react-native-async-storage/async-storage
+npm i react-native-svg
+```
+
 ## Usage
 
 ```js
