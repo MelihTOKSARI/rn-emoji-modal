@@ -74,8 +74,10 @@
     "@types/react": "17.0.21"
   },
   "peerDependencies": {
+    "@react-native-async-storage/async-storage": "^1.19.3",
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-svg": "^13.14.0"
   },
   "workspaces": [
     "example"
@@ -158,8 +160,6 @@
     ]
   },
   "dependencies": {
-    "@react-native-async-storage/async-storage": "^1.19.3",
-    "emoji-datasource": "^15.0.1",
-    "react-native-svg": "^13.14.0"
+    "emoji-datasource": "^15.0.1"
   }
 }
