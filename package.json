@@ -1,6 +1,6 @@
 {
   "name": "rn-emoji-modal",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Library to use emoji modal",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
