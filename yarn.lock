@@ -3140,6 +3140,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-async-storage/async-storage@npm:^1.19.3":
+  version: 1.21.0
+  resolution: "@react-native-async-storage/async-storage@npm:1.21.0"
+  dependencies:
+    merge-options: ^3.0.4
+  peerDependencies:
+    react-native: ^0.0.0-0 || >=0.60 <1.0
+  checksum: 969cdeb444a037087b1897553082e148e25c8331055dd0dc142f76deeb4aadd9ed5ec26926ae990b3e9ff088396e74ab557148a2dd2a7db86058051b774f2619
+  languageName: node
+  linkType: hard
+
 "@react-native-async-storage/async-storage@npm:^1.19.4":
   version: 1.19.4
   resolution: "@react-native-async-storage/async-storage@npm:1.19.4"
@@ -15582,6 +15593,7 @@ __metadata:
   dependencies:
     "@commitlint/config-conventional": ^17.0.2
     "@evilmartians/lefthook": ^1.5.0
+    "@react-native-async-storage/async-storage": ^1.19.3
     "@react-native/eslint-config": ^0.72.2
     "@release-it/conventional-changelog": ^5.0.0
     "@types/jest": ^28.1.2
@@ -15598,13 +15610,12 @@ __metadata:
     react: 18.2.0
     react-native: 0.72.5
     react-native-builder-bob: ^0.20.0
+    react-native-svg: ^13.14.0
     release-it: ^15.0.0
     typescript: ^5.0.2
   peerDependencies:
-    "@react-native-async-storage/async-storage": ^1.19.3
     react: "*"
     react-native: "*"
-    react-native-svg: ^13.14.0
   languageName: unknown
   linkType: soft
 
