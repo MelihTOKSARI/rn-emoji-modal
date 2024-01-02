@@ -58,6 +58,7 @@ interface Props {
   showHistory?: boolean;
   showPreview?: boolean;
   showTabs?: boolean;
+  defaultEmoji?: string;
   onSelected: (selected: string) => void;
 }
 
@@ -89,6 +90,7 @@ const EmojiModal = ({
   showHistory = false,
   showPreview = true,
   showTabs = true,
+  defaultEmoji = '',
   onSelected,
 }: Props) => {
   const [isReady, setIsReady] = useState(false);
@@ -97,7 +99,7 @@ const EmojiModal = ({
   const [colLength, setColLength] = useState(0);
   const [colSize, setColSize] = useState(0);
   const [width, setWidth] = useState(0);
-  const [selected, setSelected] = useState<string>('');
+  const [selected, setSelected] = useState<string>(defaultEmoji);
   const [category, setCategory] = useState<Category>(
     Categories.emotion as Category
   );
